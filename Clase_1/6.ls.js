@@ -5,7 +5,6 @@ fs.readdir('.', (err, files) => {
     console.error('Error al leer el directorio')
     return
   }
-
   files.forEach((file) => {
     console.log(file)
   })
