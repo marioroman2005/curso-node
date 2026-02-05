@@ -1,0 +1,35 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "Curso de node de midudev",
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs",
+    "midudev"
+  ],
+  "homepage": "https://github.com/marioroman2005/curso-node#readme",
+  "bugs": {
+    "url": "https://github.com/marioroman2005/curso-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marioroman2005/curso-node.git"
+  },
+  "license": "ISC",
+  "author": "Mario Roman Sanchez",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "picocolors": "1.1.1"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
