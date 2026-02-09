@@ -1,5 +1,7 @@
 const express = require('express')
+const crypto = require('node:crypto')
 const movies = require('./movies.json')
+const z = require('zod')
 
 const app = express()
 app.disable('x-powered-by')
@@ -25,6 +27,33 @@ app.get('/movies/:id', (req, res) => { // path to regexp
   if (movie) return res.json(movie)
 
   res.status(404).json({ message: 'Movie not found' })
+})
+
+app.post('/movies', (req, res) => {
+  const {
+    title,
+    genre,
+    year,
+    director,
+    duration,
+    rate,
+    poster
+  } = req.body
+
+  const newMovie = {
+    id: crypto.randomUUID(),
+    title,
+    genre,
+    director,
+    year,
+    duration,
+    rate: rate ?? 0,
+    poster
+  }
+
+  movies.push(newMovie)
+
+  res.status(201).json(newMovie)
 })
 
 app.listen(PORT, () => {
